@@ -65,17 +65,17 @@ export default function App() {
     {
       title: 'Planta de Layout',
       description: 'Plantas de ambientes com layout de mobiliário',
-      image: 'https://images.unsplash.com/photo-1721244654195-943615c56ac4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwZmxvb3IlMjBwbGFufGVufDF8fHx8MTc2OTA0NjcxM3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'src/images/detalhamento01.jpeg',
     },
     {
       title: 'Detalhamentos de Obra',
       description: 'Desenhos técnicos executivos para construção',
-      image: 'https://images.unsplash.com/photo-1721244653757-b76cc4679dfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibHVlcHJpbnQlMjBhcmNoaXRlY3R1cmUlMjBkcmF3aW5nfGVufDF8fHx8MTc2OTExMDQ0Nnww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'src/images/detalhamento02.jpeg',
     },
     {
       title: 'Desenhos Técnicos',
       description: 'Documentação completa em CAD para execução',
-      image: 'https://images.unsplash.com/photo-1603901622056-0a5bee231395?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwZHJhZnRpbmd8ZW58MXx8fHwxNzY5MTEwNDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'src/images/detalhamento03.jpeg',
     },
   ];
 
@@ -99,7 +99,7 @@ export default function App() {
   ];
 
   return (
-    <div className="size-full bg-[#fdfaf7]">
+    <div className="size-full bg-[#d2691e]">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-[#fdfaf7]/95 backdrop-blur-sm z-50 border-b border-[#d2691e]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,7 +170,7 @@ export default function App() {
       <section id="home" className="relative h-screen flex items-center justify-center mt-16">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1695067440629-b5e513976100?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjkxMDQ3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="src\images\quarto01.jpg"
             alt="Arquitetura Moderna"
             className="w-full h-full object-cover"
           />
@@ -194,8 +194,8 @@ export default function App() {
       <section id="about" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#d2691e]">Sobre Nós</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#fdfaf7]">Sobre Nós</h2>
+            <p className="text-xl text-[#fdfaf7] max-w-3xl mx-auto">
               Somos especializados em arquitetura de interiores, oferecendo soluções completas para 
               projetos residenciais e comerciais. Nossa equipe trabalha com detalhamentos técnicos precisos, 
               modelagem 3D e renders fotorrealistas para otimizar os processos do seu escritório.
@@ -292,8 +292,8 @@ export default function App() {
       <section id="carpentry" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#d2691e]">Detalhamento de Marcenaria</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#fdfaf7]">Detalhamento de Marcenaria</h2>
+            <p className="text-xl text-[#fdfaf7] max-w-3xl mx-auto">
               Projetos executivos detalhados de marcenaria sob medida, incluindo armários, móveis planejados 
               e elementos personalizados para seus projetos de interiores.
             </p>
@@ -311,7 +311,7 @@ export default function App() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#d2691e]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <h3 className="text-xl mb-2 text-[#d2691e]">{work.title}</h3>
-                <p className="text-gray-600">{work.description}</p>
+                <p className="text-[#fdfaf7]">{work.description}</p>
               </div>
             ))}
           </div>
@@ -401,7 +401,7 @@ export default function App() {
                 <Phone size={24} />
               </div>
               <h3 className="text-xl mb-2 text-[#d2691e]">Telefone</h3>
-              <p className="text-gray-600">+55 (11) 9999-9999</p>
+              <p className="text-gray-600">+55 (51) 99264-4428</p>
             </div>
 
             <div className="text-center">
@@ -409,7 +409,7 @@ export default function App() {
                 <Mail size={24} />
               </div>
               <h3 className="text-xl mb-2 text-[#d2691e]">Email</h3>
-              <p className="text-gray-600">contato@estudiocaju.com.br</p>
+              <p className="text-gray-600">projetos.estudiocaju@gmail.com.br</p>
             </div>
 
             <div className="text-center">
@@ -417,7 +417,7 @@ export default function App() {
                 <MapPin size={24} />
               </div>
               <h3 className="text-xl mb-2 text-[#d2691e]">Localização</h3>
-              <p className="text-gray-600">São Paulo, SP<br />Brasil</p>
+              <p className="text-gray-600">Porto Alegre, RS<br />Brasil</p>
             </div>
           </div>
         </div>
@@ -426,7 +426,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-[#d2691e] text-white py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-white/80">© 2026 Estúdio Caju. Todos os direitos reservados.</p>
+          {/* <p className="text-white/80">© 2026 Estúdio Caju. Todos os direitos reservados.</p> */}
         </div>
       </footer>
     </div>
