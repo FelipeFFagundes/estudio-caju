@@ -43,7 +43,7 @@ export default function App() {
     },
   ];
 
-  const carpentryWorks = [
+  const servicosCastanha = [
     {
       title: 'Marcenaria Personalizada',
       description: 'Detalhamento completo de móveis sob medida',
@@ -61,40 +61,38 @@ export default function App() {
     },
   ];
 
-  const floorPlans = [
+  const servicos = [
     {
-      title: 'Planta de Layout',
-      description: 'Plantas de ambientes com layout de mobiliário',
+      title: 'Modelagem 3D + Renderização',
+      description: 'Este serviço corresponde a modelagem 3D do seu projeto, com opção de contratar o serviço de Render, uma imagem realista de seu projeto',
       image: 'src/images/detalhamento01.jpeg',
     },
     {
       title: 'Detalhamentos de Obra',
-      description: 'Desenhos técnicos executivos para construção',
+      description: 'O detalhamento de obra é feito com os desenhos técnicos que você está acostumado a apresentar em seus projetos, como: planta de forro, planta de paginação, planta de luminotécnica.',
       image: 'src/images/detalhamento02.jpeg',
     },
     {
-      title: 'Desenhos Técnicos',
-      description: 'Documentação completa em CAD para execução',
-      image: 'src/images/detalhamento03.jpeg',
+      title: 'Detalhamento de Marcenaria',
+      description: 'Desenhos técnicos que mostram como os móveis serão instalados, com todas as medidas, materiais e acabamentos necessários para a execução. ',
+      image: 'src/images/detalhamento01.jpeg',
     },
   ];
 
-  const services = [
+  const about = [
     {
-      title: 'Design de Interiores',
-      description: 'Projetos completos de ambientes residenciais e comerciais com foco em funcionalidade e estética.',
+      title: 'Anna Júlia',
+      description: 'texto aqui',
     },
     {
-      title: 'Detalhamento de Marcenaria',
-      description: 'Projetos executivos detalhados de móveis planejados e marcenaria sob medida.',
+      image: 'src/images/AnnaJuliaImg.jpg'
     },
     {
-      title: 'Modelagem 3D',
-      description: 'Modelagem tridimensional de ambientes e mobiliário para visualização do projeto.',
+      title: 'Catarina',
+      description: 'texto aqui',
     },
     {
-      title: 'Render Fotorrealista',
-      description: 'Renders de alta qualidade para apresentação e aprovação de projetos.',
+      image: 'src/images/CatarinaImg.jpg'
     },
   ];
 
@@ -108,7 +106,7 @@ export default function App() {
               <span style={{ fontFamily: "'Cocomat Pro', serif" }}>Estúdio</span>{' '}
               <span style={{ fontFamily: "'Virtual', sans-serif" }}>Caju</span>
             </div>
-            
+
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
               <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-[#d2691e] transition-colors">
@@ -118,11 +116,11 @@ export default function App() {
                 Sobre
               </button>
               <button onClick={() => scrollToSection('floor-plans')} className="text-gray-700 hover:text-[#d2691e] transition-colors">
-                Detalhamentos
+                Projeto Caju
               </button>
-              <button onClick={() => scrollToSection('carpentry')} className="text-gray-700 hover:text-[#d2691e] transition-colors">
-                Marcenaria
-              </button>
+              {/* <button onClick={() => scrollToSection('carpentry')} className="text-gray-700 hover:text-[#d2691e] transition-colors">
+                Projeto Castanha
+              </button> */}
               <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-[#d2691e] transition-colors">
                 Projetos
               </button>
@@ -132,7 +130,7 @@ export default function App() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden text-[#d2691e]"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -150,11 +148,11 @@ export default function App() {
                 Sobre
               </button>
               <button onClick={() => scrollToSection('floor-plans')} className="block w-full text-left py-2 text-gray-700">
-                Detalhamentos
+                Projeto Caju
               </button>
-              <button onClick={() => scrollToSection('carpentry')} className="block w-full text-left py-2 text-gray-700">
-                Marcenaria
-              </button>
+              {/* <button onClick={() => scrollToSection('carpentry')} className="block w-full text-left py-2 text-gray-700">
+                Projeto Castanha
+              </button> */}
               <button onClick={() => scrollToSection('projects')} className="block w-full text-left py-2 text-gray-700">
                 Projetos
               </button>
@@ -181,7 +179,7 @@ export default function App() {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
             Detalhamentos de obra, detalhamentos de marcenaria, modelagem 3D e Render
           </p>
-          <button 
+          <button
             onClick={() => scrollToSection('floor-plans')}
             className="bg-[#d2691e] text-white px-8 py-3 rounded-full hover:bg-[#b8591a] transition-colors shadow-lg"
           >
@@ -196,17 +194,41 @@ export default function App() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-6 text-[#fdfaf7]">Sobre Nós</h2>
             <p className="text-xl text-[#fdfaf7] max-w-3xl mx-auto">
-              Somos especializados em arquitetura de interiores, oferecendo soluções completas para 
-              projetos residenciais e comerciais. Nossa equipe trabalha com detalhamentos técnicos precisos, 
+              Somos especializados em arquitetura de interiores, oferecendo soluções completas para
+              projetos residenciais e comerciais. Nossa equipe trabalha com detalhamentos técnicos precisos,
               modelagem 3D e renders fotorrealistas para otimizar os processos do seu escritório.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#d2691e]/10">
-                <h3 className="text-xl mb-3 text-[#d2691e]">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+            {about.map((service, index) => (
+              <div
+                key={index}
+                className="relative bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#d2691e]/10 overflow-hidden h-[420px]"
+              >
+                {/* Imagem preenchendo o card */}
+                {service.image && (
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+
+                {/* Overlay opcional */}
+                {service.image && (
+                  <div className="absolute inset-0 bg-black/10" />
+                )}
+
+                {/* Conteúdo */}
+                <div className="relative z-10 p-6 text-center flex flex-col justify-center h-full">
+                  <h3 className="text-xl mb-3 text-[#d2691e]">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-700">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -217,26 +239,34 @@ export default function App() {
       <section id="floor-plans" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#d2691e]">Plantas Técnicas</h2>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#d2691e]">Projeto Caju</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Oferecemos serviços especializados de desenho técnico e plantas baixas para arquitetos 
-              que precisam de suporte profissional na execução de projetos.
+              Com o projeto caju, você ganha mais tempo para focar na captação de novos clientes,
+              enquanto cuidamos do desenvolvimento técnico de seus projetos.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="flex items-center gap-3 bg-[#fdfaf7] px-6 py-4 rounded-full border border-[#d2691e]/20">
                 <Pencil className="text-[#d2691e]" size={24} />
-                <span className="text-gray-700">Desenho CAD</span>
+                <span className="text-gray-700">AutoCAD</span>
               </div>
               <div className="flex items-center gap-3 bg-[#fdfaf7] px-6 py-4 rounded-full border border-[#d2691e]/20">
                 <Layers className="text-[#d2691e]" size={24} />
-                <span className="text-gray-700">Documentação Técnica</span>
+                <span className="text-gray-700">SketchUp</span>
+              </div>
+              <div className="flex items-center gap-3 bg-[#fdfaf7] px-6 py-4 rounded-full border border-[#d2691e]/20">
+                <Layers className="text-[#d2691e]" size={24} />
+                <span className="text-gray-700">Layout</span>
+              </div>
+              <div className="flex items-center gap-3 bg-[#fdfaf7] px-6 py-4 rounded-full border border-[#d2691e]/20">
+                <Layers className="text-[#d2691e]" size={24} />
+                <span className="text-gray-700">Revit</span>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {floorPlans.map((plan, index) => (
-              <div key={index} className="group">
+            {servicos.map((plan, index) => (
+              <div key={index} className="group text-center">
                 <div className="relative overflow-hidden aspect-[4/3] mb-4 rounded-2xl shadow-md">
                   <img
                     src={plan.image}
@@ -249,35 +279,8 @@ export default function App() {
                 <p className="text-gray-600">{plan.description}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <div className="bg-[#d2691e]/5 rounded-3xl p-8 max-w-4xl mx-auto border border-[#d2691e]/20">
-              <h3 className="text-2xl mb-4 text-[#d2691e]">Serviços para Arquitetos</h3>
-              <p className="text-gray-600 mb-6">
-                Entendemos que o trabalho técnico de desenho pode ser demorado. Oferecemos serviços 
-                de alta qualidade para arquitetos que precisam de suporte na produção de plantas baixas, 
-                cortes, fachadas e detalhamentos técnicos.
-              </p>
-              <ul className="text-left max-w-2xl mx-auto space-y-2 text-gray-600 mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#d2691e] mt-1">•</span>
-                  <span>Plantas baixas e layouts completos</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#d2691e] mt-1">•</span>
-                  <span>Cortes e elevações técnicas</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#d2691e] mt-1">•</span>
-                  <span>Detalhamentos executivos em CAD</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#d2691e] mt-1">•</span>
-                  <span>Conversão de croquis em plantas técnicas</span>
-                </li>
-              </ul>
-              <button 
+            <div className="col-span-1 md:col-span-3 flex justify-center mt-8">
+              <button
                 onClick={() => scrollToSection('contact')}
                 className="bg-[#d2691e] text-white px-8 py-3 rounded-full hover:bg-[#b8591a] transition-colors shadow-lg"
               >
@@ -285,22 +288,22 @@ export default function App() {
               </button>
             </div>
           </div>
+
         </div>
       </section>
 
       {/* Carpentry Portfolio Section */}
-      <section id="carpentry" className="py-20 px-4">
+      {/* <section id="carpentry" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#fdfaf7]">Detalhamento de Marcenaria</h2>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#fdfaf7]">Projeto Castanha</h2>
             <p className="text-xl text-[#fdfaf7] max-w-3xl mx-auto">
-              Projetos executivos detalhados de marcenaria sob medida, incluindo armários, móveis planejados 
-              e elementos personalizados para seus projetos de interiores.
+              Atrelado à técnica que já carregamos no Projeto Caju, acrescentamos o processo criativo aos nosso projetos dando um toque da nossa essencia.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {carpentryWorks.map((work, index) => (
+            {servicosCastanha.map((work, index) => (
               <div key={index} className="group">
                 <div className="relative overflow-hidden aspect-[4/3] mb-4 rounded-2xl shadow-md">
                   <img
@@ -354,14 +357,14 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-white">
+      <section id="projects" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#d2691e]">Nossos Projetos</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl md:text-5xl mb-6 text-white">Nossos Projetos</h2>
+            <p className="text-xl text-white">
               Uma vitrine das nossas últimas realizações arquitetônicas
             </p>
           </div>
@@ -377,8 +380,8 @@ export default function App() {
                   />
                   <div className="absolute inset-0 bg-[#d2691e]/0 group-hover:bg-[#d2691e]/30 transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl mb-1 text-[#d2691e]">{project.title}</h3>
-                <p className="text-gray-600">{project.category}</p>
+                <h3 className="text-xl mb-1 text-white">{project.title}</h3>
+                <p className="text-white">{project.category}</p>
               </div>
             ))}
           </div>
