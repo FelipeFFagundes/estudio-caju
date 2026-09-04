@@ -127,17 +127,17 @@ export default function App() {
     {
       title: 'Modelagem 3D + Renderização',
       description: 'Este serviço corresponde a modelagem 3D do seu projeto, com opção de contratar o serviço de Render, uma imagem realista de seu projeto',
-      image: '/src/images/03-Render/render-01.jpeg',
+      image: import.meta.glob('../images/03-Render/render-01.jpeg', { eager: true, query: '?url', import: 'default' })['../images/03-Render/render-01.jpeg'] as string,
     },
     {
       title: 'Detalhamentos de Obra',
       description: 'O detalhamento de obra é feito com os desenhos técnicos que você está acostumado a apresentar em seus projetos, como: planta de forro, planta de paginação, planta de luminotécnica.',
-      image: '/src/images/02-Obra/detalhamento_de_obra.jpg',
+      image: import.meta.glob('../images/02-Obra/detalhamento_de_obra.jpg', { eager: true, query: '?url', import: 'default' })['../images/02-Obra/detalhamento_de_obra.jpg'] as string,
     },
     {
       title: 'Detalhamento de Marcenaria',
       description: 'Desenhos técnicos que mostram como os móveis serão instalados, com todas as medidas, materiais e acabamentos necessários para a execução. ',
-      image: '/src/images/01-Marcenaria/marcenaria.jpg',
+      image: import.meta.glob('../images/01-Marcenaria/marcenaria.jpg', { eager: true, query: '?url', import: 'default' })['../images/01-Marcenaria/marcenaria.jpg'] as string,
     },
   ];
 
@@ -147,14 +147,14 @@ export default function App() {
       description: 'Sou Anna Júlia Azambuja Rodrigues, o “AJU” do estúdio cAJU e estudante de Arquitetura e Urbanismo na Universidade do Vale do Rio dos Sinos (UNISINOS). Possuo experiência em arquitetura de interiores, com foco no desenvolvimento de detalhamentos técnicos e modelagem 3D. Acredito que um bom projeto está nos detalhes e busco transformar ideias em soluções técnicas bem executadas, aliando precisão, organização e sensibilidade em cada etapa do processo.',
     },
     {
-      image: 'src/images/AnnaJuliaImg.jpg'
+      image: import.meta.glob('../images/pessoas/AnnaJuliaImg.jpg', { eager: true, query: '?url', import: 'default' })['../images/pessoas/AnnaImg.jpg'] as string
     },
     {
       title: 'Catarina',
       description: 'Me chamo Catarina, o CA do Caju. Sou arquiteta e urbanista formada pela Unisinos|POA. Tenho experiência em arquitetura hospitalar, arquitetura de interiores e arquitetura comercial. Minha parte favorita do projeto, além da criação, é a parte de detalhamento executivo, pensar nos detalhes que fazem o projeto único; amo ver os detalhes que desenhamos no 2D se tornando imagens realistas no 3D.',
     },
     {
-      image: 'src/images/CatarinaImg.jpg'
+      image: import.meta.glob('../images/pessoas/CatarinaImg.jpg', { eager: true, query: '?url', import: 'default' })['../images/pessoas/CatarinaImg.jpg'] as string
     },
   ];
 
@@ -235,8 +235,8 @@ export default function App() {
       <section id="home" className="relative h-screen flex items-center justify-center mt-16 scroll-mt-16">
         <div className="absolute inset-0">
           <img
-            src="src\images\quarto01.jpg"
-            alt="Arquitetura Moderna"
+            src= {import.meta.glob('../images/hero/hero-image.jpg', { eager: true, query: '?url', import: 'default' })['../images/hero/hero-image.jpg'] as string}
+            alt='Arquitetura Moderna'
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[#d2691e]/40" />
