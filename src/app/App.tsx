@@ -147,7 +147,7 @@ export default function App() {
       description: 'Sou Anna Júlia Azambuja Rodrigues, o “AJU” do estúdio cAJU e estudante de Arquitetura e Urbanismo na Universidade do Vale do Rio dos Sinos (UNISINOS). Possuo experiência em arquitetura de interiores, com foco no desenvolvimento de detalhamentos técnicos e modelagem 3D. Acredito que um bom projeto está nos detalhes e busco transformar ideias em soluções técnicas bem executadas, aliando precisão, organização e sensibilidade em cada etapa do processo.',
     },
     {
-      image: import.meta.glob('../images/pessoas/AnnaImg.jpg', { eager: true, query: '?url', import: 'default' })['../images/pessoas/AnnaJuliaImg.jpg'] as string
+      image: import.meta.glob('../images/pessoas/AnnaJuliaImg.jpg', { eager: true, query: '?url', import: 'default' })['../images/pessoas/AnnaJuliaImg.jpg'] as string
     },
     {
       title: 'Catarina',
