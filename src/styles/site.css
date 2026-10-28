@@ -98,7 +98,7 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-.wordmark__caju { font-family: var(--script); font-size: 1.1em; }
+.wordmark__caju { font-family: var(--script); font-size: 2em; vertical-align: -0.12em; }
 .wordmark--light { color: #fff; }
 
 /* ---------- Navigation ---------- */
@@ -252,13 +252,15 @@ a { color: inherit; }
 }
 
 .programas li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px 22px;
   border-radius: 999px;
   background: var(--blush);
 }
 
-.servicos,
-.projetos {
+.servicos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px 32px;
@@ -286,15 +288,120 @@ a { color: inherit; }
 
 li:hover > .frame img { transform: scale(1.04); }
 
-.servicos h3,
-.projetos h3 { margin-top: 20px; }
+.servicos h3 { margin-top: 20px; }
 
 .servicos h3 { color: var(--caju-ink); }
 
-.servicos p,
-.projetos p { margin-top: 8px; }
+.servicos p { margin-top: 8px; }
 
 .servicos p { color: var(--muted); }
+
+.programas img { width: 24px; height: 24px; object-fit: contain; }
+
+/* Clickable pictures open the lightbox */
+.zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.servicos .frame img { object-position: center; }
+
+.section__intro--long { max-width: 780px; }
+.section__intro--long p + p { margin-top: 16px; }
+
+/* Nossos projetos: one card per project, gallery beside its details */
+.projetos { display: grid; gap: 40px; }
+
+.projeto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.projeto__galeria { position: relative; min-height: 100%; background: var(--blush); }
+
+.projeto__slide { height: 100%; }
+
+.projeto__slide img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.projeto__texto { padding: clamp(28px, 4vw, 48px); }
+
+.projeto__categoria { color: var(--caju-ink); }
+
+.projeto h3 { margin: 4px 0 16px; font-size: 30px; color: var(--caju-ink); }
+
+.projeto__ficha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.projeto__ficha dt { color: var(--muted); font-size: 15px; }
+.projeto__ficha dd { margin: 0; }
+
+.projeto__tools { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.projeto__tools li {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--blush);
+  color: var(--caju-ink);
+  font-size: 15px;
+}
+
+/* Lightbox */
+.lightbox {
+  width: auto !important;
+  max-width: min(92vw, 1100px) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.lightbox__frame { position: relative; }
+
+.lightbox__frame img {
+  max-width: 100%;
+  max-height: 86vh;
+  border-radius: var(--radius);
+}
+
+.lightbox__nav,
+.lightbox__close {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--caju-ink);
+  cursor: pointer;
+  transition: transform 200ms var(--ease-out);
+}
+
+.lightbox__nav:hover,
+.lightbox__close:hover { transform: scale(1.08); }
+
+.lightbox__nav { top: 50%; margin-top: -22px; }
+.lightbox__nav--prev { left: 12px; }
+.lightbox__nav--next { right: 12px; }
+.lightbox__close { top: -14px; right: -14px; background: var(--caju-deep); color: #fff; }
 
 /* Contato */
 .contatos {
@@ -340,8 +447,9 @@ li:hover > .frame img { transform: scale(1.04); }
 /* ---------- Tablet and phone ---------- */
 
 @media (max-width: 900px) {
-  .servicos,
-  .projetos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projeto { grid-template-columns: 1fr; }
+  .projeto__galeria { aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 760px) {
@@ -349,7 +457,6 @@ li:hover > .frame img { transform: scale(1.04); }
   .bar__toggle { display: block; }
 
   .servicos,
-  .projetos,
   .contatos,
   .equipe { grid-template-columns: 1fr; }
 
