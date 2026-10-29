@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { contato, iconeDoPrograma, imagens, programas, projetos, servicos, sobre, socias } from '../data';
 import type { Galeria } from '../components/Lightbox';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
@@ -141,10 +141,10 @@ export function Projetos({ abrir }: { abrir: Abrir }) {
               </Carousel>
 
               <div className="projeto__texto">
-                <p className="projeto__categoria">{p.category}</p>
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
                 <dl className="projeto__ficha">
+                  <div><dt>Tipo</dt><dd>{p.category}</dd></div>
                   <div><dt>Localização</dt><dd>{p.location}</dd></div>
                   <div><dt>Área</dt><dd>{p.area}</dd></div>
                   <div><dt>Ano</dt><dd>{p.year}</dd></div>
@@ -181,7 +181,6 @@ export function Contato() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="contato__icone" aria-hidden="true"><MessageCircle size={24} /></span>
               <h3>WhatsApp</h3>
               <span className="contato__valor">{contato.telefone}</span>
               <span className="contato__acao">Iniciar conversa <ArrowUpRight size={16} aria-hidden="true" /></span>
@@ -189,7 +188,6 @@ export function Contato() {
           </li>
           <li>
             <a className="contato" href={`mailto:${contato.email}`}>
-              <span className="contato__icone" aria-hidden="true"><Mail size={24} /></span>
               <h3>E-mail</h3>
               <span className="contato__valor">{contato.email}</span>
               <span className="contato__acao">Enviar e-mail <ArrowUpRight size={16} aria-hidden="true" /></span>
@@ -197,7 +195,6 @@ export function Contato() {
           </li>
           <li>
             <div className="contato contato--estatico">
-              <span className="contato__icone" aria-hidden="true"><MapPin size={24} /></span>
               <h3>Localização</h3>
               <span className="contato__valor">{contato.cidade}, Brasil</span>
             </div>

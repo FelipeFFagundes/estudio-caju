@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { nav } from '../data';
+import { useActiveSection } from '../hooks/useActiveSection';
 import { Wordmark } from './Wordmark';
+
+const ids = nav.map((item) => item.id);
 
 export function NavBar() {
   const [open, setOpen] = useState(false);
+  const active = useActiveSection(ids);
 
   useEffect(() => {
     if (!open) return;
@@ -22,7 +26,9 @@ export function NavBar() {
         <ul className="bar__links">
           {nav.map((item) => (
             <li key={item.id}>
-              <a href={`#${item.id}`}>{item.label}</a>
+              <a href={`#${item.id}`} aria-current={active === item.id ? 'true' : undefined}>
+                {item.label}
+              </a>
             </li>
           ))}
         </ul>
@@ -47,7 +53,11 @@ export function NavBar() {
         <ul>
         {nav.map((item) => (
           <li key={item.id}>
-            <a href={`#${item.id}`} onClick={() => setOpen(false)}>
+            <a
+              href={`#${item.id}`}
+              aria-current={active === item.id ? 'true' : undefined}
+              onClick={() => setOpen(false)}
+            >
               {item.label}
             </a>
           </li>
