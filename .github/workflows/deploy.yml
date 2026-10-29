@@ -45,6 +45,6 @@ jobs:
           # Hostinger drops plain-FTP data connections; FTPS keeps them open.
           # The certificate is checked (strict); FTP_SERVER must then be the host
           # name the certificate was issued for, not the bare IP.
-          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
-          security: ${{ vars.FTP_SECURITY || 'strict' }}
+          protocol: ${{ vars.FTP_PROTOCOL || secrets.FTP_PROTOCOL || 'ftps' }}
+          security: ${{ vars.FTP_SECURITY || secrets.FTP_SECURITY || 'strict' }}
           timeout: 120000
