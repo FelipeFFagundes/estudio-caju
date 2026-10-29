@@ -1,3 +1,4 @@
+import { ArrowUpRight, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { contato, iconeDoPrograma, imagens, programas, projetos, servicos, sobre, socias } from '../data';
 import type { Galeria } from '../components/Lightbox';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
@@ -30,8 +31,10 @@ export function Sobre({ abrir }: { abrir: Abrir }) {
   return (
     <section id="sobre" className="section section--caju">
       <div className="container">
-        <div className="section__intro section__intro--long" data-reveal>
+        <div className="section__intro" data-reveal>
           <h2>Sobre nós</h2>
+        </div>
+        <div className="sobre__texto" data-reveal>
           {sobre.map((p) => (
             <p key={p.slice(0, 20)}>{p}</p>
           ))}
@@ -47,8 +50,10 @@ export function Sobre({ abrir }: { abrir: Abrir }) {
               >
                 <img src={s.image} alt={`${s.name}, sentada ao lado de um piano`} loading="lazy" />
               </button>
-              <h3>{s.name}</h3>
-              <p>{s.bio}</p>
+              <div>
+                <h3>{s.name}</h3>
+                <p>{s.bio}</p>
+              </div>
             </li>
           ))}
         </ul>
@@ -170,18 +175,32 @@ export function Contato() {
         </div>
         <ul className="contatos" data-reveal>
           <li>
-            <h3>WhatsApp</h3>
-            <a href={`https://wa.me/${contato.whatsapp}?text=${encodeURIComponent(mensagem)}`} target="_blank" rel="noopener noreferrer">
-              {contato.telefone}
+            <a
+              className="contato"
+              href={`https://wa.me/${contato.whatsapp}?text=${encodeURIComponent(mensagem)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="contato__icone" aria-hidden="true"><MessageCircle size={24} /></span>
+              <h3>WhatsApp</h3>
+              <span className="contato__valor">{contato.telefone}</span>
+              <span className="contato__acao">Iniciar conversa <ArrowUpRight size={16} aria-hidden="true" /></span>
             </a>
           </li>
           <li>
-            <h3>E-mail</h3>
-            <a href={`mailto:${contato.email}`}>{contato.email}</a>
+            <a className="contato" href={`mailto:${contato.email}`}>
+              <span className="contato__icone" aria-hidden="true"><Mail size={24} /></span>
+              <h3>E-mail</h3>
+              <span className="contato__valor">{contato.email}</span>
+              <span className="contato__acao">Enviar e-mail <ArrowUpRight size={16} aria-hidden="true" /></span>
+            </a>
           </li>
           <li>
-            <h3>Localização</h3>
-            <span>{contato.cidade}, Brasil</span>
+            <div className="contato contato--estatico">
+              <span className="contato__icone" aria-hidden="true"><MapPin size={24} /></span>
+              <h3>Localização</h3>
+              <span className="contato__valor">{contato.cidade}, Brasil</span>
+            </div>
           </li>
         </ul>
       </div>

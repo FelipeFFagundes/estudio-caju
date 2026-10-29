@@ -27,7 +27,7 @@ export const contato = {
   telefone: '+55 (51) 99264-4428',
   telefoneLink: 'tel:+5551992644428',
   whatsapp: '5551992644428',
-  email: 'projetos.estudiocaju@gmail.com.br',
+  email: 'projetos.estudiocaju@gmail.com',
   cidade: 'Porto Alegre, RS',
 };
 

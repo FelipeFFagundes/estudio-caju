@@ -34,11 +34,17 @@ export function NavBar() {
           aria-controls="menu-mobile"
           onClick={() => setOpen(!open)}
         >
-          {open ? 'Fechar' : 'Menu'}
+          <span className="burger" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="bar__toggle-label">{open ? 'Fechar' : 'Menu'}</span>
         </button>
       </div>
 
-      <ul id="menu-mobile" className="bar__sheet" hidden={!open}>
+      <div id="menu-mobile" className={`bar__sheet${open ? ' is-open' : ''}`} {...(open ? {} : { inert: '' })}>
+        <ul>
         {nav.map((item) => (
           <li key={item.id}>
             <a href={`#${item.id}`} onClick={() => setOpen(false)}>
@@ -46,7 +52,8 @@ export function NavBar() {
             </a>
           </li>
         ))}
-      </ul>
+        </ul>
+      </div>
     </nav>
   );
 }
