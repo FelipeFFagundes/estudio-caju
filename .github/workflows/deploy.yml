@@ -3,7 +3,8 @@
 #   FTP_SERVER    e.g. ftp.seudominio.com.br or the IP shown in hPanel
 #   FTP_USERNAME  the FTP account user from hPanel
 #   FTP_PASSWORD  that account's password
-# Optional repository variable FTP_SERVER_DIR (defaults to public_html/).
+# Optional repository variable FTP_SERVER_DIR (defaults to ./, the FTP account's own
+# folder, which on this Hostinger account is already the site's public_html).
 name: Deploy na Hostinger
 
 on:
@@ -41,7 +42,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
+          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
           # Hostinger drops plain-FTP data connections; FTPS keeps them open.
           # The certificate is checked (strict); FTP_SERVER must then be the host
           # name the certificate was issued for, not the bare IP.
